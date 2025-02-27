@@ -73,7 +73,14 @@ function addToCart(bookId) {
         cartItem.quantity++;
     }
     else {
-        cart.push({ ...book, quantity: 1 });  // Spread operator creates a copy with quantity
+        cart.push({
+            id: book.id,
+            title: book.title,
+            price: book.price,
+            image: book.image,
+            category: book.category,
+            quantity: 1
+        }); 
     }
     updateCart();  // Refresh cart display
 }
