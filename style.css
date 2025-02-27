@@ -1,0 +1,313 @@
+/* Overall body styling */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Gradient background from light blue to gray */
+    min-height: 100vh; /* Ensures body takes full viewport height */
+    font-family: 'Segoe UI', sans-serif; /* Default font family */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stacks children vertically */
+}
+
+/* Navbar styling */
+.navbar {
+    background: #2c3e50; /* Dark blue background */
+    padding: 0.75rem 1rem; /* Vertical and horizontal padding */
+}
+
+.navbar-brand {
+    font-size: clamp(1.25rem, 3vw, 1.5rem); /* Responsive font size with min/max limits */
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 0.75rem; /* Padding for nav links */
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+    color: #fff; /* White text color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3498db; /* Light blue on hover */
+}
+
+.navbar-collapse {
+    justify-content: space-between; /* Distributes space between navbar items */
+}
+
+.navbar-nav {
+    display: flex; /* Flexbox for navigation items */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+}
+
+.nav-item {
+    padding: 15px; /* Padding around each nav item */
+}
+
+.center-nav {
+    display: flex; /* Flexbox for center navigation */
+    flex-grow: 1; /* Allows it to take available space */
+    max-width: 100%; /* Prevents overflow */
+    margin: 0 1rem; /* Horizontal spacing */
+}
+
+.navbar-nav.right-nav {
+    margin-left: auto; /* Pushes right-side nav to the end */
+}
+
+/* Book Cards styling */
+.book-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
+    border: none; /* Removes default border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Clips content to rounded corners */
+    background: #fff; /* White background */
+    margin-bottom: 1rem; /* Bottom spacing */
+}
+
+.book-card:hover {
+    transform: translateY(-10px); /* Lifts card up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds shadow on hover */
+}
+
+.book-img {
+    height: 500px; /* Fixed height for book images */
+    object-fit: 100% 100%; /* Attempts to stretch image (note: should be 'cover' or 'contain' typically) */
+    width: 100%; /* Full width */
+}
+
+.card-body {
+    padding: 1rem; /* Internal padding */
+}
+
+.card-title {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive title size */
+}
+
+.card-text {
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive text size */
+}
+
+.btn-add,
+.btn-buy {
+    padding: clamp(6px, 1.5vw, 8px) clamp(15px, 2.5vw, 20px); /* Responsive padding */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive font size */
+    border-radius: 25px; /* Rounded buttons */
+    width: 48%; /* Nearly half-width buttons */
+}
+
+.btn-add {
+    background: #27ae60; /* Green background */
+    border: none; /* No border */
+}
+
+.btn-add:hover {
+    background: #219653; /* Darker green on hover */
+}
+
+.btn-buy {
+    background: #3498db; /* Blue background */
+    border: none; /* No border */
+    margin-left: 0; /* Overrides any potential margin */
+}
+
+.btn-buy:hover {
+    background: #2980b9; /* Darker blue on hover */
+}
+
+/* Category Buttons styling */
+.category-btn {
+    border-radius: 25px; /* Rounded buttons */
+    padding: clamp(6px, 1.5vw, 8px) clamp(15px, 2.5vw, 20px); /* Responsive padding */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive font size */
+    margin: 0.25rem; /* Spacing between buttons */
+}
+
+.category-btn.active {
+    background-color: #3498db; /* Blue when active */
+    color: white; /* White text */
+    border-color: #3498db; /* Matching border */
+}
+
+.category-btn:hover:not(.active) {
+    background-color: #f8f9fa; /* Light gray on hover */
+    color: #3498db; /* Blue text */
+}
+
+/* Cart styling */
+.cart-badge {
+    position: absolute; /* Positions relative to parent */
+    top: -5px; /* Above parent */
+    left: 30px; /* Right offset */
+    background: #e74c3c; /* Red background */
+    height: 20px; /* Fixed size */
+    width: 20px; /* Fixed size */
+    display: flex; /* Centering content */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    border-radius: 50%; /* Circular shape */
+    font-size: 0.8rem; /* Small text */
+}
+
+.cart-offcanvas {
+    width: clamp(300px, 90vw, 400px); /* Responsive width */
+    background: #34495e; /* Dark blue-gray background */
+    color: white; /* White text */
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    padding: 1rem; /* Padding */
+}
+
+.offcanvas-body {
+    padding: 1rem; /* Internal padding */
+}
+
+.cart-item {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 10px; /* Rounded corners */
+    padding: 0.75rem; /* Internal padding */
+    margin-bottom: 0.75rem; /* Bottom spacing */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertical alignment */
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.cart-item img {
+    width: clamp(50px, 15vw, 60px); /* Responsive width */
+    height: clamp(70px, 20vw, 80px); /* Responsive height */
+    object-fit: cover; /* Scales image properly */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-right: 0.75rem; /* Right spacing */
+}
+
+.cart-item-details {
+    flex-grow: 1; /* Takes available space */
+    min-width: 150px; /* Minimum width */
+}
+
+.cart-item h6 {
+    margin-bottom: 0.25rem; /* Small bottom margin */
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive size */
+}
+
+.cart-item p {
+    margin-bottom: 0; /* No bottom margin */
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive size */
+}
+
+.cart-item-quantity {
+    width: clamp(40px, 10vw, 50px); /* Responsive width */
+}
+
+.btn-delete,
+.cart-item-buy {
+    padding: clamp(4px, 1vw, 5px) clamp(8px, 2vw, 10px); /* Responsive padding */
+    margin: 0.25rem; /* Spacing */
+}
+
+.btn-delete {
+    background: #e74c3c; /* Red background */
+    border: none; /* No border */
+}
+
+.btn-delete:hover {
+    background: #c0392b; /* Darker red on hover */
+}
+
+.cart-item-buy {
+    height: 40px; /* Fixed height */
+    width: 40px; /* Fixed width */
+    border-radius: 5px; /* Slightly rounded */
+    background: #3498db; /* Blue background */
+    border: none; /* No border */
+}
+
+.cart-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle top border */
+    padding-top: 0.75rem; /* Top padding */
+    margin-top: 1rem; /* Top spacing */
+}
+
+/* Footer styling */
+footer {
+    background: #2c3e50; /* Dark blue background */
+    color: white; /* White text */
+    padding: clamp(1rem, 3vw, 2rem) 0; /* Responsive vertical padding */
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+footer h5 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive heading size */
+}
+
+footer p,
+footer a {
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive text size */
+}
+
+.footer-links li a {
+    text-decoration: none; /* Removes underline */
+    color: #fff; /* White text */
+    margin-bottom: 0.5rem; /* Bottom spacing */
+}
+
+/* Responsive Design */
+
+/* Medium screens and below */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 1rem 0; /* Vertical padding */
+        justify-content: flex-start; /* Aligns items to start */
+    }
+
+    .nav-item {
+        padding: 5px; /* Reduced padding */
+    }
+
+    .navbar-nav {
+        display: flex; /* Maintains flexbox */
+        justify-content: center; /* Centers items */
+        align-items: start; /* Aligns to start */
+    }
+
+    .navbar-nav.center-nav {
+        text-align: start; /* Left-align text */
+        max-width: 100%; /* Full width */
+        margin: 0; /* Removes margins */
+        flex-direction: column; /* Stacks items vertically */
+    }
+
+    .navbar-nav.right-nav {
+        margin-top: 1rem; /* Top spacing */
+        text-align: center; /* Centered text */
+        margin-left: 0; /* Removes left margin */
+    }
+}
+
+/* Small screens and below */
+@media (max-width: 768px) {
+    .category-btn {
+        width: calc(50% - 0.5rem); /* Two buttons per row with spacing */
+    }
+
+    .footer .col-md-4 {
+        margin-bottom: 1.5rem; /* Spacing between footer columns */
+        text-align: center; /* Centered text */
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+    .btn-add,
+    .btn-buy {
+        width: 100%; /* Full width buttons */
+        margin: 0.25rem 0; /* Vertical spacing */
+    }
+
+    .d-flex.justify-content-between {
+        flex-direction: column; /* Stacks flex items vertically */
+    }
+
+    .category-btn {
+        width: 100%; /* Full width buttons */
+    }
+}
